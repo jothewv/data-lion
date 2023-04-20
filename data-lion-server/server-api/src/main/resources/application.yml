@@ -1,0 +1,8 @@
+server:
+  port: 6001 #端口
+  servlet:
+    context-path: /data/api
+spring:
+  application:
+    name: service-data
+
