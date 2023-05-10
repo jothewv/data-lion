@@ -25,7 +25,7 @@ public class MySQLBackup implements IBackup {
         BufferedReader bufferedReader = null;
         try {
             printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(savePath + model.getFileName()), "utf8"));
-            Process process = Runtime.getRuntime().exec(" mysqldump -h" + model.getJdbcUrl() + " -P" + model.getPort() + " -u" + model.getUsername() + " -p" + model.getPassword() + " --default-character-set=utf8 " + model.getDatabase());
+            Process process = Runtime.getRuntime().exec(" mysqldump -h" + model.getUrl() + " -P" + model.getPort() + " -u" + model.getUsername() + " -p" + model.getPassword() + " --default-character-set=utf8 " + model.getDatabase());
             InputStreamReader inputStreamReader = new InputStreamReader(process.getInputStream(), "utf8");
             bufferedReader = new BufferedReader(inputStreamReader);
             String line;

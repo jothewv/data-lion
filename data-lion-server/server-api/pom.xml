@@ -51,7 +51,7 @@
 <!--            <artifactId>hive-exec</artifactId>-->
 <!--            <version>1.1.0</version>-->
 <!--        </dependency>-->
-        <!-- commons-lang版本不能过高 否则hive连接报错 -->
+        <!-- 请不要升级commons-lang版本 否则hive连接报错 -->
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
