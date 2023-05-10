@@ -2,9 +2,12 @@ package com.jothew.datalion.api.service.support.imp;
 
 import com.jothew.datalion.api.service.support.IBackup;
 import com.jothew.datalion.common.entity.model.JDBCModel;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
 
+@Component
 public class MySQLBackup implements IBackup {
 
     @Override
