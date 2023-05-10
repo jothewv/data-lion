@@ -15,7 +15,7 @@ public class TestConnectedImpl implements ITestConnected {
     public boolean testConnected(JDBCModel model) {
         switch (model.getType()){
             case "MySQL":
-                model.setDriver("org.apache.hive.jdbc.HiveDriver");
+                model.setDriver("com.mysql.cj.jdbc.Driver");
                 return mySQLTestConnected(model);
             case "hive":
                 model.setDriver("org.apache.hive.jdbc.HiveDriver");
@@ -52,10 +52,12 @@ public class TestConnectedImpl implements ITestConnected {
     }
 
 
-    private Boolean hiveTestConnected(BaseModel model) {
-        Connection conn=null;
-        Statement stmt=null;
+    private static Boolean hiveTestConnected(BaseModel model) {
+        Connection conn;
+        Statement stmt;
 
+        model.setUrl("jdbc:hive2://10.120.68.229:10001/default;auth=noSasl");
+        model.setDriver("org.apache.hive.jdbc.HiveDriver");
         StringUtils.isEmpty(model.toString());
         try {
             //注册驱动
